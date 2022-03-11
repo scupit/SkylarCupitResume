@@ -1,0 +1,65 @@
+@import "normalize.css";
+
+$primary: #87c887;
+$secondary: #e9ffe9;
+
+$accent: darken($primary, 10%);
+$dark-accent: darken($accent, 10%);
+$darkest-accent: darken($dark-accent, 10%);
+
+body {
+  display: flex;
+  justify-content: center;
+  background-color: lightgrey;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#paper-area {
+  display: flex;
+  flex-direction: column;
+  width: 8.5in;
+  height: 11in;
+  background-color: white;
+  box-shadow: 0 10px 15px 0 grey;
+}
+
+#resume-header {
+  h1 {
+    margin: 0;
+    color: white;
+  }
+
+  flex: 1;
+  width: 100%;
+  // background-color: $primary;
+  background: linear-gradient(45deg,
+    $darkest-accent 20%,
+    $dark-accent 20% 30%,
+    $accent 30% 40%,
+    $primary 40% 50%,
+    white
+  );
+}
+
+#resume-body {
+  display: flex;
+  flex: 8;
+}
+
+#resume-footer {
+  width: 100%;
+  height: 10%;
+  flex: 1;
+  background-color: $primary;
+}
+
+.left-section {
+  flex: 1;
+  background-color: $secondary;
+}
+
+.right-section {
+  flex: 2;
+  background-color: white;
+}
