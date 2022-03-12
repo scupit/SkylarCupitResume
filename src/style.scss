@@ -7,32 +7,54 @@ $accent: darken($primary, 10%);
 $dark-accent: darken($accent, 10%);
 $darkest-accent: darken($dark-accent, 10%);
 
-body {
-  display: flex;
-  justify-content: center;
-  background-color: lightgrey;
-  padding-top: 10px;
-  padding-bottom: 10px;
+@media print {
+  body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+
+  #paper-area {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+@media screen {
+  body {
+    display: flex;
+    justify-content: center;
+    background-color: #c2c2c2;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  #paper-area {
+    width: 8.5in;
+    height: 11in;
+    background-color: white;
+    box-shadow: 0 10px 15px 0 grey;
+  }
 }
 
 #paper-area {
   display: flex;
   flex-direction: column;
-  width: 8.5in;
-  height: 11in;
-  background-color: white;
-  box-shadow: 0 10px 15px 0 grey;
 }
 
-#resume-header {
-  h1 {
-    margin: 0;
-    color: white;
-  }
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
 
-  flex: 1;
-  width: 100%;
-  // background-color: $primary;
+
+#resume-header {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  max-width: 100%;
+  padding: 10px;
   background: linear-gradient(45deg,
     $darkest-accent 20%,
     $dark-accent 20% 30%,
@@ -44,22 +66,28 @@ body {
 
 #resume-body {
   display: flex;
-  flex: 8;
+  flex: 1;
 }
 
 #resume-footer {
-  width: 100%;
-  height: 10%;
-  flex: 1;
+  padding: 10px;
+  color: white;
+  max-width: 100%;
   background-color: $primary;
+}
+
+.contact-section {
+  color: black;
 }
 
 .left-section {
   flex: 1;
+  padding: 10px;
   background-color: $secondary;
 }
 
 .right-section {
   flex: 2;
+  padding: 10px;
   background-color: white;
 }
