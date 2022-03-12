@@ -63,24 +63,56 @@ h1, h2, h3, h4, h5, h6, p {
 
 
 #resume-header {
+  position: relative;
   color: white;
   display: flex;
   justify-content: space-between;
+  overflow: hidden;
   flex-direction: row;
   max-width: 100%;
   padding: $spacing-normal;
-  background: linear-gradient(45deg,
-    $darkest-accent 20%,
-    $dark-accent 20% 30%,
-    $accent 30% 40%,
-    $primary 40% 50%,
-    white
-  );
+
+  & > * {
+    // Ensure header contents render over the background rectangles
+    z-index: 2;
+  }
+
+  .bg-box {
+    top: 0;
+    left: -50%;
+    width: 100%;
+    height: 200%;
+    position: absolute;
+    z-index: 1;
+
+    &:nth-child(4) {
+      background-color: $darkest-accent;
+      transform: rotate(45deg) translateY(-15%);
+    }
+
+    &:nth-child(3) {
+      background-color: $dark-accent;
+      transform: rotate(45deg) translateY(-45%);
+    }
+
+    &:nth-child(2) {
+      background-color: $accent;
+      transform: rotate(45deg) translateY(-65%);
+    }
+
+    &:nth-child(1) {
+      background: linear-gradient(45deg, $accent, white);
+      width: 80%;
+      left: 25%;
+      max-height: 100%;
+    }
+  }
 }
 
 #resume-body {
   display: flex;
   flex: 1;
+  z-index: 3;
 }
 
 #resume-footer {
@@ -93,8 +125,8 @@ h1, h2, h3, h4, h5, h6, p {
 .contact-section {
   color: $secondary;
   // background-color: $primary;
-  width: 40%;
   background-color: $accent;
+  width: 40%;
   padding: $spacing-small;
   border-radius: 5px;
 
