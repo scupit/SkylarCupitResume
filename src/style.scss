@@ -6,6 +6,9 @@ $secondary: #e9ffe9;
 // $primary: #87c0c8;
 // $secondary: #e9f8ff;
 
+// $primary: #c88787;
+// $secondary: #ffe9e9;
+
 $accent: darken($primary, 10%);
 $dark-accent: darken($accent, 10%);
 $darkest-accent: darken($dark-accent, 10%);
@@ -77,6 +80,10 @@ h1, h2, h3, h4, h5, h6, p {
     z-index: 2;
   }
 
+  h1 {
+    font-size: 2.5rem;
+  };
+
   .bg-box {
     top: 0;
     left: -50%;
@@ -126,11 +133,10 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .contact-section {
-  color: $secondary;
-  // background-color: $primary;
-  background-color: $accent;
+  background-color: $dark-accent;
   width: 40%;
   padding: $spacing-small;
+  // border: 2px solid white;
   border-radius: 5px;
 
   table {
@@ -159,15 +165,23 @@ h1, h2, h3, h4, h5, h6, p {
 
 #right-section {
   flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding: $spacing-normal;
   background-color: white;
 
   h2 {
+    // color: $darkest-accent;
     color: $darkest-accent;
     margin-bottom: $spacing-normal;
     background-color: $secondary;
     border-radius: 5px;
     padding: $spacing-small;
+  }
+
+  section {
+    // flex: 1;
   }
 }
 
@@ -189,13 +203,11 @@ h1, h2, h3, h4, h5, h6, p {
     h5 {
       color: $accent;
     }
-
   }
 }
 
 .tools-list-container {
-  background-color: lighten($primary, 10%);
-  // background-color: $secondary;
+  background-color: lighten($primary, 13%);
   padding: $spacing-small;
   border-radius: 10px;
   margin-bottom: $spacing-normal;
@@ -203,4 +215,20 @@ h1, h2, h3, h4, h5, h6, p {
   &:last-child {
     margin-bottom: 0;
   }
+
+  h3:first-child {
+    background-color: $primary;
+    border-radius: $spacing-small $spacing-small 0 0;
+    padding-left: $spacing-small;
+    padding-right: $spacing-small;
+  }
+
+  ul, ol {
+    margin-top: $spacing-normal;
+    margin-bottom: $spacing-normal;
+  }
+}
+
+.todo-text {
+  color: red;
 }
