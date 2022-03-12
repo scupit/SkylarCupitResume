@@ -116,6 +116,9 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 #resume-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   padding: $spacing-normal;
   color: white;
   max-width: 100%;
@@ -148,19 +151,49 @@ h1, h2, h3, h4, h5, h6, p {
   height: 1rem;
 }
 
-.left-section {
+#left-section {
   flex: 1;
   padding: $spacing-normal;
   background-color: $secondary;
 }
 
-.right-section {
+#right-section {
   flex: 2;
   padding: $spacing-normal;
   background-color: white;
+
+  h2 {
+    color: $darkest-accent;
+    margin-bottom: $spacing-normal;
+    background-color: $secondary;
+    border-radius: 5px;
+    padding: $spacing-small;
+  }
 }
 
-.tools-list {
+.info-block {
+  margin-bottom: $spacing-normal;
+
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 2px solid $accent;
+    margin-bottom: $spacing-small;
+
+    h2, h3, h4 {
+      color: $accent;
+    }
+
+    h5 {
+      color: $accent;
+    }
+
+  }
+}
+
+.tools-list-container {
   background-color: lighten($primary, 10%);
   // background-color: $secondary;
   padding: $spacing-small;
