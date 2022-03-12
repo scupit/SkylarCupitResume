@@ -3,12 +3,19 @@
 $primary: #87c887;
 $secondary: #e9ffe9;
 
+// $primary: #87c0c8;
+// $secondary: #e9f8ff;
+
 $accent: darken($primary, 10%);
 $dark-accent: darken($accent, 10%);
 $darkest-accent: darken($dark-accent, 10%);
 
+$spacing-normal: 10px;
+$spacing-small: 5px;
+
 @media print {
   body {
+    overflow: hidden;
     width: 100vw;
     height: 100vh;
     margin: 0;
@@ -16,18 +23,21 @@ $darkest-accent: darken($dark-accent, 10%);
   }
 
   #paper-area {
-    height: 100%;
-    width: 100%;
+    flex: 1;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
   }
 }
 
 @media screen {
   body {
-    display: flex;
     justify-content: center;
     background-color: #c2c2c2;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: $spacing-normal;
+    padding-bottom: $spacing-normal;
   }
 
   #paper-area {
@@ -36,6 +46,10 @@ $darkest-accent: darken($dark-accent, 10%);
     background-color: white;
     box-shadow: 0 10px 15px 0 grey;
   }
+}
+
+body {
+  display: flex;
 }
 
 #paper-area {
@@ -54,7 +68,7 @@ h1, h2, h3, h4, h5, h6, p {
   justify-content: space-between;
   flex-direction: row;
   max-width: 100%;
-  padding: 10px;
+  padding: $spacing-normal;
   background: linear-gradient(45deg,
     $darkest-accent 20%,
     $dark-accent 20% 30%,
@@ -70,24 +84,58 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 #resume-footer {
-  padding: 10px;
+  padding: $spacing-normal;
   color: white;
   max-width: 100%;
   background-color: $primary;
 }
 
 .contact-section {
-  color: black;
+  color: $secondary;
+  // background-color: $primary;
+  width: 40%;
+  background-color: $accent;
+  padding: $spacing-small;
+  border-radius: 5px;
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  td {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.contact-icon {
+  filter: invert(100%);
+  width: 1rem;
+  height: 1rem;
 }
 
 .left-section {
   flex: 1;
-  padding: 10px;
+  padding: $spacing-normal;
   background-color: $secondary;
 }
 
 .right-section {
   flex: 2;
-  padding: 10px;
+  padding: $spacing-normal;
   background-color: white;
+}
+
+.tools-list {
+  background-color: lighten($primary, 10%);
+  // background-color: $secondary;
+  padding: $spacing-small;
+  border-radius: 10px;
+  margin-bottom: $spacing-normal;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
