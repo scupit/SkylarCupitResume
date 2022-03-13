@@ -37,14 +37,6 @@
       <div id="resume-body">
         <section id="left-section">
           <div class="tools-list-container">
-            <h3>Proficient Tools</h3>
-            <ul>
-              <li>Vim</li>
-              <li>Visual Studio Code</li>
-            </ul>
-          </div>
-
-          <div class="tools-list-container">
             <h3>Proficient With</h3>
             <ul>
               <li>TypeScript</li>
@@ -69,6 +61,17 @@
               <li>Webpack</li>
               <li>Docker</li>
               <li>NodeJS</li>
+              <li>Bash</li>
+              <li>Windows PowerShell</li>
+            </ul>
+          </div>
+
+          <div class="tools-list-container">
+            <h3>Other Tools</h3>
+            <ul>
+              <li>Vim</li>
+              <li>Visual Studio Code</li>
+              <li>Windows Terminal</li>
             </ul>
           </div>
 
@@ -89,7 +92,7 @@
                 <h3>University of Texas at Dallas</h3>
                 <h5>1 Year (2018-2019)</h5>
               </header>
-              <p>Major: <b>Computer Science</b>. Attended 1 year. No Degree.</p>
+              <p><b>Computer Science</b> major. Attended 1 year. No Degree.</p>
             </div>
           </section>
 
@@ -100,7 +103,11 @@
                 <h3>Software Engineering Intern</h3>
                 <h5>IGT (Summer of 2018)</h5>
               </header>
-              <p class="todo-text">TODO: Describe work done at IGT</p>
+              <p>
+                Built a frontend + backend tool which pulls data from a BitBucket repository and generates
+                a "code review proof" PDF. The document contains commit information, some comments and code explanations,
+                and some annotated code diffs. Used NodeJS, ExpressJS, and TypeScript.
+              </p>
             </div>
 
             <div class="info-block">
@@ -124,8 +131,10 @@
                 <h5>Written in Rust</h5>
               </header>
               <p>
-                Currently called <a href="https://github.com/scupit/gcmake-rust">gcmake-rust</a>,
-                ... <h3 class="todo-text">TODO: Concise explanation</h3>
+                Currently called <a href="https://github.com/scupit/gcmake-rust" target="_blank">gcmake-rust</a>,
+                this tool uses an easily readable YAML file and an opinionated project structure to generate
+                CMakeLists.txt files for an entire project tree. Also allows full C/C++ project
+                generation and in-tree file creation. Still a work in progress.
               </p>
             </div>
 
@@ -134,22 +143,32 @@
                 <h3>Full-Stack mobile app</h3>
                 <h5>React Native, Kotlin, and TypeScript</h5>
               </header>
-              <p class="todo-text">TODO: Explain the PEMF app, especially Spring Boot + Kotlin</p>
+              <p>
+                With a <a href="https://kotlinlang.org/">Kotlin</a> + <a href="https://spring.io/projects/spring-boot">Spring Boot</a>
+                backend and a <a href="https://www.typescriptlang.org/">TypeScript</a> + <a href="https://reactnative.dev/">React Native</a>
+                mobile app frontend, users can manage client information, appointment and visit schedules, office locations and hours,
+                and more. The repository is private, but I can show it upon request.
+              </p>
             </div>
 
             <div class="info-block">
               <header>
                 <h3>Basic System Administration</h3>
-                <h5>Raspberry Pi</h5>
+                <h5>Raspberry Pi 4 Model B 4GB</h5>
               </header>
-              <p class="todo-text">TODO: Explain Raspberry Pi administration (SSH, TMUX, CUPS, Samba + Users, Apache 2, Port forwarding, etc.)</p>
+              <p>
+                Configured Raspberry Pi for multiple personal and family uses. Used CUPS to allow home wi-fi printing on a non wifi-compatible
+                printer, exposed using Samba. Configured a Samba file share to act as a home "cloud" file server. Used Apache2 to host
+                web content over HTTPS, which can be accessed from outside the home network due to port forwarding. Always use SSH with
+                a public key to remotely use the Pi, and TMUX for easily managing shell sessions.
+              </p>
             </div>
           </section>
         </section>
       </div>
       <footer id="resume-footer">
         <p>Written HTML and <a href="https://sass-lang.com/documentation">SCSS</a></p>
-        <p>Packaged with <a href="https://vitejs.dev/">Vite</a></p>
+        <p>Developed with <a href="https://vitejs.dev/">Vite</a></p>
       </footer>
     </div>
     <script type="module" src="/src/main.ts"></script>
