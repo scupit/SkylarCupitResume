@@ -2,12 +2,15 @@
 
 $primary: #87c887;
 $secondary: #e9ffe9;
+$contact-box-color: #76e4c5;
 
 // $primary: #87c0c8;
 // $secondary: #e9f8ff;
+// $contact-box-color: #d1d07d;
 
 // $primary: #c88787;
 // $secondary: #ffe9e9;
+// $contact-box-color: #be1212;
 
 $accent: darken($primary, 10%);
 $dark-accent: darken($accent, 10%);
@@ -32,6 +35,14 @@ $spacing-small: 5px;
   a {
     color: inherit;
     text-decoration: none;
+  }
+
+  .contact-section {
+    width: 40%;
+  }
+
+  #resume-body .contact-section {
+    display: none;
   }
 }
 
@@ -137,9 +148,12 @@ h1, h2, h3, h4, h5, h6, p {
   };
 
   .bg-box {
+    // Make sure the boxes are long enough to cover the header in slim, tall screens;
+    $width-amount: 200%;
+
     top: 0;
-    left: -50%;
-    width: 100%;
+    left: calc($width-amount / -2);
+    width: $width-amount;
     height: 200%;
     position: absolute;
     z-index: 1;
@@ -185,10 +199,12 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .contact-section {
-  background-color: $dark-accent;
+  background-color: $contact-box-color;
   padding: $spacing-small;
   // border: 2px solid white;
   border-radius: 5px;
+  box-shadow: 0 3px 10px -3px lighten(black, 25%);
+
 
   table {
     width: 100%;
