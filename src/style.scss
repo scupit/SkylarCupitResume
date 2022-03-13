@@ -39,6 +39,15 @@ $spacing-small: 5px;
   body {
     justify-content: center;
     background-color: #c2c2c2;
+  }
+
+  #paper-area {
+    background-color: white;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  body {
     padding-top: $spacing-normal;
     padding-bottom: $spacing-normal;
   }
@@ -46,8 +55,53 @@ $spacing-small: 5px;
   #paper-area {
     width: 8.5in;
     height: 11in;
-    background-color: white;
     box-shadow: 0 10px 15px 0 grey;
+  }
+
+  #resume-header {
+    flex-direction: row;
+  }
+
+  #resume-body .contact-section {
+    display: none;
+  }
+
+  .contact-section {
+    width: 40%;
+  }
+
+  .info-block header {
+    flex-direction: row;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  html {
+    font-size: 10pt;
+  }
+
+  #resume-body {
+    flex-direction: column;
+  }
+
+  #resume-header {
+    flex-direction: column;
+
+    .contact-section {
+      display: none;
+    }
+  }
+
+  .contact-section {
+    flex: 1;
+    margin-bottom: $spacing-normal;
+  }
+
+  .info-block header {
+    flex-direction: column;
+    h5 {
+      margin-left: $spacing-small;
+    }
   }
 }
 
@@ -64,14 +118,12 @@ h1, h2, h3, h4, h5, h6, p {
   margin: 0;
 }
 
-
 #resume-header {
   position: relative;
   color: white;
   display: flex;
   justify-content: space-between;
   overflow: hidden;
-  flex-direction: row;
   max-width: 100%;
   padding: $spacing-normal;
 
@@ -134,7 +186,6 @@ h1, h2, h3, h4, h5, h6, p {
 
 .contact-section {
   background-color: $dark-accent;
-  width: 40%;
   padding: $spacing-small;
   // border: 2px solid white;
   border-radius: 5px;
@@ -190,7 +241,6 @@ h1, h2, h3, h4, h5, h6, p {
 
   header {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: baseline;
     border-bottom: 2px solid $accent;
