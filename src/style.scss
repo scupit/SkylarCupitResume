@@ -278,12 +278,8 @@ h1, h2, h3, h4, h5, h6, p {
     border-bottom: 2px solid $accent;
     margin-bottom: $spacing-small;
 
-    h2, h3, h4 {
-      color: $accent;
-    }
-
-    h5 {
-      color: $accent;
+    h2, h3, h4, h5 {
+      color: $dark-accent;
     }
   }
 }
