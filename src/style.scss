@@ -20,7 +20,6 @@ $spacing-normal: 10px;
 $spacing-small: 5px;
 
 @mixin slight-shadow {
-  // box-shadow: 0 3px 7px -3px lighten(black, 25%);
   box-shadow: 0 3px 5px -3px lighten(black, 25%);
 }
 
@@ -82,18 +81,27 @@ $spacing-small: 5px;
     display: none;
   }
 
+  #resume-footer {
+    flex-direction: row;
+  }
+
   .contact-section {
     width: 40%;
   }
 
-  .info-block header {
-    flex-direction: row;
+  .info-block {
+    header {
+      flex-direction: row;
+    }
+    p {
+      line-height: 1.2rem;
+    }
   }
 }
 
 @media screen and (max-width: 480px) {
   html {
-    font-size: 10pt;
+    font-size: 12pt;
   }
 
   #resume-body {
@@ -106,6 +114,10 @@ $spacing-small: 5px;
     .contact-section {
       display: none;
     }
+  }
+
+  #resume-footer {
+    flex-direction: column;
   }
 
   .contact-section {
@@ -195,7 +207,6 @@ h1, h2, h3, h4, h5, h6, p {
 
 #resume-footer {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   padding: $spacing-normal;
   color: white;
@@ -253,12 +264,7 @@ h1, h2, h3, h4, h5, h6, p {
     color: $darkest-accent;
     margin-bottom: $spacing-normal;
     background-color: $secondary;
-    border-radius: 5px;
     padding: $spacing-small;
-  }
-
-  section {
-    // flex: 1;
   }
 }
 
@@ -283,11 +289,12 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .tools-list-container {
+  @include slight-shadow;
+
   background-color: lighten($primary, 13%);
   padding: $spacing-small;
   border-radius: 10px;
   margin-bottom: $spacing-normal;
-  @include slight-shadow;
 
   &:last-child {
     margin-bottom: 0;
