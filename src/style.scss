@@ -23,114 +23,9 @@ $spacing-small: 5px;
   box-shadow: 0 3px 5px -3px lighten(black, 25%);
 }
 
-@media print {
-  body {
-    overflow: hidden;
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-  }
-
-  #paper-area {
-    flex: 1;
-  }
-
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
-
-  .contact-section {
-    width: 40%;
-  }
-
-  #resume-body .contact-section {
-    display: none;
-  }
-}
-
-@media screen {
-  body {
-    justify-content: center;
-    background-color: #c2c2c2;
-  }
-
-  #paper-area {
-    background-color: white;
-  }
-}
-
-@media screen and (min-width: 480px) {
-  body {
-    padding-top: $spacing-normal;
-    padding-bottom: $spacing-normal;
-  }
-
-  #paper-area {
-    width: 8.5in;
-    height: 11in;
-    box-shadow: 0 10px 15px 0 grey;
-  }
-
-  #resume-header {
-    flex-direction: row;
-  }
-
-  #resume-body .contact-section {
-    display: none;
-  }
-
-  #resume-footer {
-    flex-direction: row;
-  }
-
-  .contact-section {
-    width: 40%;
-  }
-
-  .info-block {
-    header {
-      flex-direction: row;
-    }
-    p {
-      line-height: 1.2rem;
-    }
-  }
-}
-
-@media screen and (max-width: 480px) {
-  html {
-    font-size: 12pt;
-  }
-
-  #resume-body {
-    flex-direction: column;
-  }
-
-  #resume-header {
-    flex-direction: column;
-
-    .contact-section {
-      display: none;
-    }
-  }
-
-  #resume-footer {
-    flex-direction: column;
-  }
-
-  .contact-section {
-    flex: 1;
-    margin-bottom: $spacing-normal;
-  }
-
-  .info-block header {
-    flex-direction: column;
-    h5 {
-      margin-left: $spacing-small;
-    }
-  }
+:root {
+  font-size: 18px;
+  font-family: serif;
 }
 
 body {
@@ -231,6 +126,12 @@ h1, h2, h3, h4, h5, h6, p {
     align-items: center;
   }
 
+  @supports not (-moz-appearance: none) {
+    img {
+      margin-right: $spacing-small;
+    }
+  }
+
   a {
     color: white;
   }
@@ -311,4 +212,115 @@ h1, h2, h3, h4, h5, h6, p {
 
 .todo-text {
   color: red;
+}
+
+@media print {
+  body {
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+
+  #paper-area {
+    flex: 1;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .contact-section {
+    width: 40%;
+    font-weight: 500;
+  }
+
+  #resume-body .contact-section {
+    display: none;
+  }
+}
+
+@media screen {
+  body {
+    justify-content: center;
+    background-color: #c2c2c2;
+  }
+
+  #paper-area {
+    background-color: white;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  body {
+    padding-top: $spacing-normal;
+    padding-bottom: $spacing-normal;
+  }
+
+  #paper-area {
+    width: 8.5in;
+    height: 11in;
+    box-shadow: 0 10px 15px 0 grey;
+  }
+
+  #resume-header {
+    flex-direction: row;
+  }
+
+  #resume-body .contact-section {
+    display: none;
+  }
+
+  #resume-footer {
+    flex-direction: row;
+  }
+
+  .contact-section {
+    width: 40%;
+  }
+
+  .info-block {
+    header {
+      flex-direction: row;
+    }
+    p {
+      line-height: 1.2rem;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  :root {
+    font-size: 12pt;
+  }
+
+  #resume-body {
+    flex-direction: column;
+  }
+
+  #resume-header {
+    flex-direction: column;
+
+    .contact-section {
+      display: none;
+    }
+  }
+
+  #resume-footer {
+    flex-direction: column;
+  }
+
+  .contact-section {
+    flex: 1;
+    margin-bottom: $spacing-normal;
+  }
+
+  .info-block header {
+    flex-direction: column;
+    h5 {
+      margin-left: $spacing-small;
+    }
+  }
 }
