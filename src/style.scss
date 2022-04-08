@@ -250,6 +250,7 @@ h1, h2, h3, h4, h5, h6, p {
   }
 }
 
+// All screens (not printing)
 @media screen {
   body {
     justify-content: center;
@@ -261,6 +262,7 @@ h1, h2, h3, h4, h5, h6, p {
   }
 }
 
+// Screens wider than an upright mobile phone
 @media screen and (min-width: 480px) {
   body {
     padding-top: $spacing-normal;
@@ -271,10 +273,12 @@ h1, h2, h3, h4, h5, h6, p {
     width: 8.5in;
     height: 11in;
     box-shadow: 0 10px 15px 0 grey;
+    border-radius: 10px;
   }
 
   #resume-header {
     flex-direction: row;
+    border-radius: 10px 10px 0 0;
   }
 
   #resume-body .contact-section {
@@ -289,6 +293,7 @@ h1, h2, h3, h4, h5, h6, p {
 
   #resume-footer {
     flex-direction: row;
+    border-radius: 0 0 10px 10px;
   }
 
   .contact-section {
