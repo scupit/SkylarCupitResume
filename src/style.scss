@@ -26,7 +26,9 @@ $spacing-small: 5px;
 :root {
   // font-size: 18px;
   font-size: 17px;
-  font-family: serif;
+  // font-family: serif;
+  font-family: "Times New Roman", "FreeSerif";
+  // font-family: "Times New Roman", "Noto Serif";
 }
 
 body {
@@ -282,7 +284,8 @@ h1, h2, h3, h4, h5, h6, p {
 
   #paper-area {
     width: 8.5in;
-    height: 11in;
+    // height: 11in;
+    height: min(11in, 100%);
     box-shadow: 0 10px 15px 0 grey;
     border-radius: 10px;
   }
