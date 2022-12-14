@@ -13,7 +13,8 @@ My resume, written as a single web page. The finished product can be viewed at
 1. `git clone git@github.com:scupit/SkylarCupitResume.git`
 2. `cd SkylarCupitResume`
 3. Run `yarn install` to install all needed dependencies.
-4. Run the correct [editor setup command](https://yarnpkg.com/getting-started/editor-sdks). For VSCode, `yarn sdks vscode` is what you want.
+4. Run `yarn plugin import typescript` to ensure *@types/\** packages are manages automatically.
+5. Run the correct [editor setup command](https://yarnpkg.com/getting-started/editor-sdks). For VSCode, `yarn sdks vscode` is what you want.
 
 ## Build and Run
 
