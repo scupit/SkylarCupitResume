@@ -19,9 +19,14 @@ async function makePDFFromPage(pageURL, outFilePath) {
   await browser.close();
 }
 
+const urls = {
+  dev: "http://localhost:5173",
+  localDist: `file://${__dirname}/dist/index.html`,
+  preview: "http://localhost:4173",
+};
+
 makePDFFromPage(
-  // Run using the dev server, not the production build.
-  "http://localhost:5173",
+  urls.localDist,
   "./dist/Skylar_Cupit_Resume.pdf"
 )
   .catch(console.error)
