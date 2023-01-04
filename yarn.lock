@@ -2193,19 +2193,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"resume@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "resume@workspace:."
-  dependencies:
-    "@yarnpkg/sdks": ^3.0.0-rc.32
-    normalize.css: ^8.0.1
-    puppeteer: ^19.4.0
-    sass: ^1.56.1
-    typescript: ^4.9.3
-    vite: ^3.2.4
-  languageName: unknown
-  linkType: soft
-
 "retry@npm:^0.12.0":
   version: 0.12.0
   resolution: "retry@npm:0.12.0"
@@ -2321,6 +2308,19 @@ __metadata:
   checksum: a2f098f247adc367dffc27845853e9959b9e88b01cb301658cfe4194352d8d2bb32e18467c786a7fe15f1d44b233ea35633d076d5e737870b7139949d1ab6318
   languageName: node
   linkType: hard
+
+"skylar-cupit-resume@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "skylar-cupit-resume@workspace:."
+  dependencies:
+    "@yarnpkg/sdks": ^3.0.0-rc.32
+    normalize.css: ^8.0.1
+    puppeteer: ^19.4.0
+    sass: ^1.56.1
+    typescript: ^4.9.3
+    vite: ^3.2.4
+  languageName: unknown
+  linkType: soft
 
 "slash@npm:^3.0.0":
   version: 3.0.0
