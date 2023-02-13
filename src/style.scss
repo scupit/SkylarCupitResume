@@ -39,17 +39,21 @@ body {
   // align-items: center;
 }
 
-#paper-area {
+.paper-area {
   display: flex;
   flex-direction: column;
   margin: auto;
+}
+
+.paper-area ~ .paper-area {
+  margin-top: $spacing-normal;
 }
 
 h1, h2, h3, h4, h5, h6, p {
   margin: 0;
 }
 
-#resume-header {
+.resume-header {
   position: relative;
   color: white;
   display: flex;
@@ -102,13 +106,13 @@ h1, h2, h3, h4, h5, h6, p {
   }
 }
 
-#resume-body {
+.resume-body {
   display: flex;
   flex: 1;
   z-index: 3;
 }
 
-#resume-footer {
+.resume-footer {
   display: flex;
   justify-content: space-between;
   padding: $spacing-normal;
@@ -151,13 +155,17 @@ h1, h2, h3, h4, h5, h6, p {
   }
 }
 
+.dark-primary-text {
+  color: $darkest-accent;
+}
+
 .contact-icon {
   filter: invert(100%);
   width: 1rem;
   height: 1rem;
 }
 
-#left-section {
+.left-section {
   flex: 1;
   padding: $spacing-normal;
   background-color: $secondary;
@@ -175,7 +183,7 @@ h1, h2, h3, h4, h5, h6, p {
   }
 }
 
-#right-section {
+.right-section {
   flex: 2;
   display: flex;
   flex-direction: column;
@@ -189,6 +197,18 @@ h1, h2, h3, h4, h5, h6, p {
     background-color: $secondary;
     padding: $spacing-small;
   }
+
+  h3 {
+    @extend .dark-primary-text;
+  }
+}
+
+#cover-letter {
+  display: none;
+}
+
+#cover-letter .right-section {
+  padding: calc($spacing-normal * 2);
 }
 
 .info-block {
@@ -276,8 +296,20 @@ h1, h2, h3, h4, h5, h6, p {
     padding: 0;
   }
 
-  #paper-area {
+  #cover-letter {
+    display: flex;
+  }
+
+  .paper-area {
     flex: 1;
+  }
+
+  .paper-area ~ .paper-area {
+    margin-top: auto;
+  }
+
+  .paper-area {
+    page-break-before: always;
   }
 
   a {
@@ -290,7 +322,7 @@ h1, h2, h3, h4, h5, h6, p {
     font-weight: 500;
   }
 
-  #resume-body .contact-section {
+  .resume-body .contact-section {
     display: none;
   }
 
@@ -307,7 +339,7 @@ h1, h2, h3, h4, h5, h6, p {
     background-color: $body-bg-color;
   }
 
-  #paper-area {
+  .paper-area {
     background-color: white;
   }
 
@@ -324,30 +356,36 @@ h1, h2, h3, h4, h5, h6, p {
     padding: $spacing-normal;
   }
 
-  #paper-area {
+  .paper-area {
     width: $paper-area-width;
     // height: 11in;
-    height: min(11in, 100%);
+    // height: min(11in, 100%);
+    // height: max(11in, 100%);
+    min-height: 11in;
     box-shadow: 0 10px 15px 0 grey;
     border-radius: 10px;
   }
 
-  #resume-header {
+  .resume-header {
     flex-direction: row;
     border-radius: 10px 10px 0 0;
   }
 
-  #resume-body .contact-section {
+  .resume-body .contact-section {
     display: none;
   }
 
-  #right-section {
+  .right-section {
+    border-radius: 0 0 10px 10px;
+  }
+
+  .right-section {
     h3 {
       font-size: 1.05em;
     }
   }
 
-  #resume-footer {
+  .resume-footer {
     flex-direction: row;
     border-radius: 0 0 10px 10px;
   }
@@ -381,11 +419,11 @@ h1, h2, h3, h4, h5, h6, p {
     font-size: 18px;
   }
 
-  #resume-body {
+  .resume-body {
     flex-direction: column;
   }
 
-  #resume-header {
+  .resume-header {
     flex-direction: column;
 
     .contact-section {
@@ -393,7 +431,7 @@ h1, h2, h3, h4, h5, h6, p {
     }
   }
 
-  #resume-footer {
+  .resume-footer {
     flex-direction: column;
   }
 

@@ -6,6 +6,7 @@ yarn run build
 (Get-Content .\dist\index.html) -replace '/assets','assets' | Set-Content .\dist\index.html -Force
 
 yarn run make-pdf
+pdftk.exe .\dist\Skylar_Cupit_Cover_Letter.pdf .\dist\Skylar_Cupit_Resume.pdf cat output .\dist\Skylar_Cupit_Resume_With_Cover_Letter.pdf
 
 7z a -ttar resume.tar dist
 7z a -tgzip resume.tar.gz resume.tar

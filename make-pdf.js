@@ -12,13 +12,28 @@ withBrowserDo(browser => {
       browser,
       urls.localDist,
       "./dist/Skylar_Cupit_Resume.pdf",
-      { omitShadows: false }
+      {
+        omitShadows: false,
+        whichDoc: "resume"
+      }
     ),
     makePDFFromPage(
       browser,
       urls.localDist,
       "./dist/Skylar_Cupit_Resume_IOS_Friendly.pdf",
-      { omitShadows: true }
+      {
+        omitShadows: true,
+        whichDoc: "resume"
+      }
+    ),
+    makePDFFromPage(
+      browser,
+      urls.localDist,
+      "./dist/Skylar_Cupit_Cover_Letter.pdf",
+      {
+        omitShadows: false,
+        whichDoc: "cover-letter"
+      }
     )
   ])
 })
@@ -48,6 +63,21 @@ async function makePDFFromPage(
     await page.addStyleTag({
       content: "* { box-shadow: none !important; }"
     });
+  }
+
+  switch (options.whichDoc) {
+    case "resume":
+      await page.addStyleTag({
+        content: "#cover-letter { display: none !important; }"
+      })
+      break;
+    case "cover-letter":
+      await page.addStyleTag({
+        content: "#resume { display: none !important; }"
+      })
+      break;
+    default:
+      throw new Error(`Invalid whichDoc ${options.whichDoc}`);
   }
 
   await page.pdf({
