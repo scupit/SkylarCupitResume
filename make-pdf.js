@@ -6,11 +6,20 @@ const urls = {
   preview: "http://localhost:4173",
 };
 
+const chosenUrl = chooseUrlUsingArgs();
+
+if (Array.isArray(chosenUrl)) {
+  console.error(`Error: Invalid URL selector '${chosenUrl[0]}' given.`);
+  process.exit(1);
+}
+
 withBrowserDo(browser => {
+  console.log(`Making PDFs using "${chosenUrl}"`)
+
   return Promise.all([
     makePDFFromPage(
       browser,
-      urls.localDist,
+      chosenUrl,
       "./dist/Skylar_Cupit_Resume.pdf",
       {
         omitShadows: false,
@@ -19,7 +28,7 @@ withBrowserDo(browser => {
     ),
     makePDFFromPage(
       browser,
-      urls.localDist,
+      chosenUrl,
       "./dist/Skylar_Cupit_Resume_IOS_Friendly.pdf",
       {
         omitShadows: true,
@@ -28,7 +37,7 @@ withBrowserDo(browser => {
     ),
     makePDFFromPage(
       browser,
-      urls.localDist,
+      chosenUrl,
       "./dist/Skylar_Cupit_Cover_Letter.pdf",
       {
         omitShadows: false,
@@ -42,6 +51,22 @@ withBrowserDo(browser => {
 // ========================================
 // Helper functions 
 // ========================================
+
+function chooseUrlUsingArgs() {
+  // 1: node
+  // 2: make-pdf.js
+  if (process.argv.length < 3) {
+    return urls.localDist;
+  }
+
+  // 3: 'selector string'
+  switch (process.argv[2]) {
+    case "dev":     return urls.dev;
+    case "preview": return urls.preview;
+    case "dist":    return urls.localDist;
+    default:        return [process.argv[2]];
+  }
+}
 
 async function withBrowserDo(actionFunc) {
   const browser = await puppeteer.launch({headless: true});
@@ -57,7 +82,11 @@ async function makePDFFromPage(
 ) {
   const page = await browser.newPage();
 
-  await page.goto(pageURL, {waitUntil: "domcontentloaded"});
+  // await page.goto(pageURL, {waitUntil: "domcontentloaded"});
+  
+  // https://pptr.dev/api/puppeteer.page.goto
+  // https://pptr.dev/api/puppeteer.puppeteerlifecycleevent
+  await page.goto(pageURL, {waitUntil: "networkidle0"});
 
   if (options.omitShadows) {
     await page.addStyleTag({

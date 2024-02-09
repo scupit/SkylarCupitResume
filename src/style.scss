@@ -53,6 +53,16 @@ h1, h2, h3, h4, h5, h6, p {
   margin: 0;
 }
 
+p, li {
+  font-family: "Quicksand", sans-serif;
+}
+
+li {
+  margin-bottom: 3px;
+  font-size: 0.95rem;
+  // font-size: 0.90rem;
+}
+
 .resume-header {
   position: relative;
   color: white;
@@ -225,6 +235,10 @@ h1, h2, h3, h4, h5, h6, p {
       color: $dark-accent;
     }
   }
+
+  header > :nth-child(2) {
+    text-align: right;
+  }
 }
 
 .tools-list-container {
@@ -247,9 +261,11 @@ h1, h2, h3, h4, h5, h6, p {
   }
 
   ul, ol {
-    padding-left: 2em;
+    padding-left: 2ch;
+    // padding-left: 0;
     margin-top: $spacing-normal;
     margin-bottom: $spacing-normal;
+    list-style: circle;
   }
 }
 
@@ -315,6 +331,10 @@ h1, h2, h3, h4, h5, h6, p {
   a {
     color: inherit;
     text-decoration: none;
+  }
+
+  .contact-section a {
+    text-decoration: underline;
   }
 
   .contact-section {
