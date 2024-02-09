@@ -53,7 +53,7 @@ h1, h2, h3, h4, h5, h6, p {
   margin: 0;
 }
 
-p, li {
+p:not(.subtitle), li {
   font-family: "Quicksand", sans-serif;
 }
 
@@ -61,6 +61,18 @@ li {
   margin-bottom: 3px;
   font-size: 0.95rem;
   // font-size: 0.90rem;
+}
+
+h1 + .subtitle {
+  font-size: 1.17rem;
+}
+
+h3 + .subtitle {
+  font-size: 0.83rem;
+}
+
+.subtitle {
+  font-weight: bold;
 }
 
 .resume-header {
@@ -219,6 +231,14 @@ li {
 
 #cover-letter .right-section {
   padding: calc($spacing-normal * 2);
+
+  .lead-in-title {
+    @extend .dark-primary-text;
+    font-size: 1.05rem;
+    margin-bottom: unset;
+    background-color: unset;
+    padding: unset;
+  }
 }
 
 .info-block {
@@ -231,7 +251,7 @@ li {
     border-bottom: 2px solid $accent;
     margin-bottom: $spacing-small;
 
-    h2, h3, h4, h5 {
+    h2, h3, h4, h5, .subtitle {
       color: $dark-accent;
     }
   }
@@ -253,7 +273,8 @@ li {
     margin-bottom: 0;
   }
 
-  h3:first-child {
+  h2:first-child {
+    font-size: 1.17em;
     background-color: $primary;
     border-radius: $spacing-small $spacing-small 0 0;
     padding-left: $spacing-small;
@@ -316,15 +337,12 @@ li {
     display: flex;
   }
 
-  .paper-area {
-    flex: 1;
-  }
-
   .paper-area ~ .paper-area {
     margin-top: auto;
   }
 
   .paper-area {
+    flex: 1;
     page-break-before: always;
   }
 
